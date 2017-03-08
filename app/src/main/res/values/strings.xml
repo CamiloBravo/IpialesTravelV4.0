@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">IpialesTravel</string>
+    <string name="titulo">titulo</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="iniciar">iniciar</string>
+    <string name="registers">registers</string>
+    <string name="Ipiales">Ipiales</string>
+    <string name="usernamei">Nombre de Usuario</string>
+    <string name="passwordd">Contraseña</string>
+    <string name="registerss">Registrarse</string>
+    <string name="Registrar">Registrar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="repasswordd">Repetir Contraseña</string>
+    <string name="correo">Correo Electronico</string>
+    <string name="Registro">Registro</string>
+    <string name="miPerfil">Mi perfil</string>
+    <string name="cerrar">Cerrar sesion</string>
+    <string name="Bienvenido">¡Bienvenido a la ciudad de las nubes verdes!</string>
+    <string name="Ipialescap">Ipiales Capital del Sur</string>
+    <string name="Principal">Menu Principal</string>
+    <string name="saludo">Saludos:</string>
+</resources>
