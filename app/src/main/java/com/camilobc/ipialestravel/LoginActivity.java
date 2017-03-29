@@ -23,13 +23,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-       /* Bundle extras= getIntent().getExtras();
-
-        username=extras.getString("username");
-        password=extras.getString("contrasena");
-        correo=extras.getString("correo"); */
-
-
         eUser=(EditText) findViewById(R.id.eUser);
         ePass=(EditText) findViewById(R.id.ePass);
         bIniciar=(Button) findViewById(R.id.bIniciar);

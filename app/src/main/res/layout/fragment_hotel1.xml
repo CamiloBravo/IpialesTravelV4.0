@@ -1,0 +1,65 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/mintcream"
+    android:layout_height="match_parent"
+    tools:context="com.camilobc.ipialestravel.hotel1Fragment">
+
+     <!--TODO: Update blank fragment layout -->
+
+    <!--<LinearLayout-->
+        <!--style="@style/linearlayoutStyle">-->
+        <!--<TextView-->
+            <!--style="@style/textViewStyle.Title"-->
+            <!--android:text="FLASH"/>-->
+        <!--<ImageView-->
+            <!--style="@style/imageViewStyle"-->
+            <!--android:src="@drawable/mayasquer"/>-->
+        <!--<TextView-->
+            <!--style="@style/textViewStyle.Content"-->
+            <!--android:text="Hotel ubicado en la ciudad de ipiales"/>-->
+    <!--</LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hosteria Mayasquer"
+            android:textAlignment="center"
+            android:textColor="#9f3730"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_gravity="center"
+            android:layout_height="300dp"
+            android:src="@drawable/mayasquer"/>
+        <com.google.android.gms.maps.MapView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment">
+
+        </com.google.android.gms.maps.MapView>
+        <!--<fragment xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--xmlns:map="http://schemas.android.com/apk/res-auto"-->
+            <!--xmlns:tools="http://schemas.android.com/tools"-->
+            <!--android:id="@+id/map"-->
+            <!--android:name="com.google.android.gms.maps.SupportMapFragment"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--tools:context="com.camilobc.ipialestravel.MapsActivity" />-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="@color/darkviolet"-->
+            <!--android:text="Dirección: Av Panamericana Km 3 via Rumichaca , Rumichaca Ipiales, Ipiales Teléfono: (2) 7734062"-->
+            <!--android:textSize="20sp"/>-->
+    </LinearLayout>
+
+</FrameLayout>

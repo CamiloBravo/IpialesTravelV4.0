@@ -21,35 +21,6 @@ public class MainActivity extends AppCompatActivity {
         correo=extras.getString("correo");//esto para recuperar los datos que fueron enviados al main activity para luego enviarlos a perfilactivity
     }
 
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        Toast.makeText(this, "OnStart",Toast.LENGTH_SHORT).show();
-//    }
-//
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        Toast.makeText(this, "OnResume",Toast.LENGTH_SHORT).show();
-//    }
-//
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        Toast.makeText(this, "OnStop",Toast.LENGTH_SHORT).show();
-//    }
-//
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-//        Toast.makeText(this, "OnDestroy",Toast.LENGTH_SHORT).show();
-//    }
-//
-//    @Override
-//    protected void onRestart() {
-//        super.onRestart();
-//        Toast.makeText(this, "OnRestart",Toast.LENGTH_SHORT).show();
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) { //solo llamo despues de crear menu en res/clic derecho/new/android respurcce directory
@@ -71,6 +42,27 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.miPerfil: //este tambien esta en menu.xml
                 intent =new Intent(MainActivity.this, PerfilActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.sitios: //cerrar es nombre de menu.xml
+                intent =new Intent(MainActivity.this, SitiosActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.bares: //cerrar es nombre de menu.xml
+                intent =new Intent(MainActivity.this, BaresActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.hotel: //cerrar es nombre de menu.xml
+                intent =new Intent(MainActivity.this, HotelActivity.class); //ojo a lo que antepone el this!!!
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);

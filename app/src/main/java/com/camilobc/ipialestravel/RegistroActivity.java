@@ -65,8 +65,6 @@ public class RegistroActivity extends AppCompatActivity {
                         setResult(RESULT_CANCELED,intent);
                     }
 
-//                    Pattern pattern = Pattern.compile(expression);
-//                    Matcher mather = pattern.matcher(email);
                     if (email.matches(expresion))
                     {
                         setResult(RESULT_OK,intent);
@@ -78,7 +76,6 @@ public class RegistroActivity extends AppCompatActivity {
                         setResult(RESULT_CANCELED,intent);
                     }
                 }
-
             }
         });
 

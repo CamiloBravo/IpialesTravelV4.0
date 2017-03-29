@@ -1,5 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.camilobc.ipialestravel.BaresActivity">
+    <item
+        android:id="@+id/Principal"
+        android:title="@string/Principal"
+        />
     <item
         android:id="@+id/miPerfil"
         android:title="@string/miPerfil"
@@ -9,10 +15,6 @@
         android:title="Hoteles"
         />
     <item
-        android:id="@+id/bares"
-        android:title="Bares"
-        />
-    <item
         android:id="@+id/sitios"
         android:title="Sitios de Interes"
         />
@@ -20,5 +22,4 @@
         android:id="@+id/cerrar"
         android:title="@string/cerrar"
         />
-
 </menu>

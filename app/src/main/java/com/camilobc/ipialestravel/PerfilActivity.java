@@ -51,6 +51,28 @@ public class PerfilActivity extends AppCompatActivity {
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
+                finish();
+                break;
+            case R.id.sitios: //cerrar es nombre de menu.xml
+                intent =new Intent(PerfilActivity.this, SitiosActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.bares: //cerrar es nombre de menu.xml
+                intent =new Intent(PerfilActivity.this, BaresActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.hotel: //cerrar es nombre de menu.xml
+                intent =new Intent(PerfilActivity.this, HotelActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
                 break;
         }
         return super.onOptionsItemSelected(item);

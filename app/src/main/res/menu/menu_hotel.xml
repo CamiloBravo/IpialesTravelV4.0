@@ -1,12 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.camilobc.ipialestravel.HotelActivity">
     <item
         android:id="@+id/Principal"
         android:title="@string/Principal"
         />
     <item
-        android:id="@+id/hotel"
-        android:title="Hoteles"
+        android:id="@+id/miPerfil"
+        android:title="@string/miPerfil"
         />
     <item
         android:id="@+id/bares"
@@ -20,5 +22,4 @@
         android:id="@+id/cerrar"
         android:title="@string/cerrar"
         />
-
 </menu>
