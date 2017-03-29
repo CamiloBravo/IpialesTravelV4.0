@@ -8,6 +8,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -18,7 +20,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ListActivity extends AppCompatActivity {
-
+    Intent intent;
+    String username, correo;
    // String[] bares = new String[]{"shots", "yesterday", "madrid"};
     private Lista_entrada[] datos=new Lista_entrada[]{
            new Lista_entrada(R.drawable.pola, "Parque La Pola", "Parque insignia del municipio", "calle 7 #12-A"),
@@ -33,6 +36,10 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+        Bundle extras=getIntent().getExtras();
+        username=extras.getString("username");
+        correo=extras.getString("correo");
+
         list = (ListView) findViewById(R.id.list);
         Adapter adapter= new Adapter(this, datos);
 
@@ -44,8 +51,20 @@ public class ListActivity extends AppCompatActivity {
                 String data= ((Lista_entrada) parent.getItemAtPosition(position)).getNombre();
                 Toast.makeText(getApplicationContext(),String.valueOf(position),Toast.LENGTH_SHORT).show();
 
-                Intent intent=new Intent(ListActivity.this, HotelActivity.class);
-                startActivity(intent);
+                if (position == 0) {
+                    Intent intent=new Intent(ListActivity.this, Parque1.class);
+                    startActivity(intent);
+                }
+                if (position == 1) {
+                    Intent intent=new Intent(ListActivity.this, Parque2.class);
+                    startActivity(intent);
+                }
+                if (position == 2) {
+                    Intent intent=new Intent(ListActivity.this, Parque3.class);
+                    startActivity(intent);
+                }
+//                Intent intent=new Intent(ListActivity.this, HotelActivity.class);
+//                startActivity(intent);
 
             }
         });
@@ -54,6 +73,62 @@ public class ListActivity extends AppCompatActivity {
 
       //  list.setAdapter(adapter);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_parques, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id=item.getItemId();
+        switch (id)
+        {
+            case R.id.cerrar: //cerrar es nombre de menu.xml
+                intent =new Intent(ListActivity.this, LoginActivity.class); //ojo a lo que antepone el this!!!
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.Principal: //este tambien esta en menu.xml
+                intent =new Intent(ListActivity.this, MainActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.miPerfil: //este tambien esta en menu.xml
+                intent =new Intent(ListActivity.this, PerfilActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.sitios: //cerrar es nombre de menu.xml
+                intent =new Intent(ListActivity.this, SitiosActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.bares: //cerrar es nombre de menu.xml
+                intent =new Intent(ListActivity.this, BaresActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.hotel: //cerrar es nombre de menu.xml
+                intent =new Intent(ListActivity.this, HotelActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     class Adapter extends ArrayAdapter<Lista_entrada>{
 
         public Adapter(@NonNull Context context, Lista_entrada[] datos) { //recibe contecto y arreglo

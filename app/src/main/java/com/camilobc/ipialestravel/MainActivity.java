@@ -47,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
+            case R.id.parques: //este tambien esta en menu.xml
+                intent =new Intent(MainActivity.this, ListActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.sitios: //cerrar es nombre de menu.xml
                 intent =new Intent(MainActivity.this, SitiosActivity.class); //ojo a lo que antepone el this!!!
                 intent.putExtra("username", username);

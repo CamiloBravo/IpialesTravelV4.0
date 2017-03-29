@@ -115,6 +115,13 @@ public class BaresActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
+            case R.id.parques: //este tambien esta en menu.xml
+                intent =new Intent(BaresActivity.this, ListActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.miPerfil: //este tambien esta en menu.xml
                 intent = new Intent(BaresActivity.this, PerfilActivity.class); //ojo a lo que antepone el this!!!
                 intent.putExtra("username", username);

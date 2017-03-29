@@ -16,6 +16,7 @@ public class RegistroActivity extends AppCompatActivity {
     EditText eRuser, eRpass, eRrepass, eRcorreo;
     Button bRregistrar, bRcancelar;
     String expresion = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+.+[a-z]";
+    int u, y;
 
 
     @Override
@@ -46,8 +47,8 @@ public class RegistroActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    if (eRpass.length()>7)
-                    {
+//                    if (eRpass.length()>7)
+//                    {
                         if(eRpass.getText().toString().equals(eRrepass.getText().toString()))
                         {
                             setResult(RESULT_OK,intent);
@@ -58,23 +59,24 @@ public class RegistroActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"La contraseña no coincide",Toast.LENGTH_SHORT).show();
                             setResult(RESULT_CANCELED,intent);
                         }
-                    }
-                    else
-                    {
-                        Toast.makeText(getApplicationContext(),"La contraseña debe ser de al menos 8 digitos",Toast.LENGTH_SHORT).show();
-                        setResult(RESULT_CANCELED,intent);
-                    }
+//                    }
+//                    else
+//                    {
+//                        Toast.makeText(getApplicationContext(),"La contraseña debe ser de al menos 8 digitos",Toast.LENGTH_SHORT).show();
+//                        setResult(RESULT_CANCELED,intent);
+//                    }
 
-                    if (email.matches(expresion))
-                    {
-                        setResult(RESULT_OK,intent);
-                        finish();
-                    }
-                    else
-                    {
-                        Toast.makeText(RegistroActivity.this, "El formato del correo no es correcto",Toast.LENGTH_SHORT).show();
-                        setResult(RESULT_CANCELED,intent);
-                    }
+//                    if (email.matches(expresion))
+//                    {
+//                        setResult(RESULT_OK,intent);
+//                        finish();
+//                    }
+//                    else
+//                    {
+//                        Toast.makeText(RegistroActivity.this, "El formato del correo no es correcto",Toast.LENGTH_SHORT).show();
+//                        setResult(RESULT_CANCELED,intent);
+//                    }
+
                 }
             }
         });

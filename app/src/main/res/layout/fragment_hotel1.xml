@@ -38,13 +38,15 @@
             android:layout_gravity="center"
             android:layout_height="300dp"
             android:src="@drawable/mayasquer"/>
-        <com.google.android.gms.maps.MapView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/map"
-            android:name="com.google.android.gms.maps.SupportMapFragment">
+        <!--<com.google.android.gms.maps.MapView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:id="@+id/map"-->
+            <!--android:name="com.google.android.gms.maps.SupportMapFragment">-->
 
-        </com.google.android.gms.maps.MapView>
+        <!--</com.google.android.gms.maps.MapView>-->
+
+        <!--Lo que sigue es opcional, tambien sale de otra forma ya implementada, pero la otra es mejor por eso se la comenta esta-->
         <!--<fragment xmlns:android="http://schemas.android.com/apk/res/android"-->
             <!--xmlns:map="http://schemas.android.com/apk/res-auto"-->
             <!--xmlns:tools="http://schemas.android.com/tools"-->
@@ -53,13 +55,13 @@
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="match_parent"-->
             <!--tools:context="com.camilobc.ipialestravel.MapsActivity" />-->
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textAlignment="center"-->
-            <!--android:textColor="@color/darkviolet"-->
-            <!--android:text="Dirección: Av Panamericana Km 3 via Rumichaca , Rumichaca Ipiales, Ipiales Teléfono: (2) 7734062"-->
-            <!--android:textSize="20sp"/>-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/darkviolet"
+            android:text="Dirección: Av Panamericana Km 3 via Rumichaca , Rumichaca Ipiales, Ipiales Teléfono: (2) 7734062"
+            android:textSize="20sp"/>
     </LinearLayout>
 
 </FrameLayout>

@@ -46,6 +46,7 @@ public class HotelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel);
 
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
@@ -68,9 +69,9 @@ public class HotelActivity extends AppCompatActivity {
             }
         });
 
-       // Bundle extras=getIntent().getExtras(); //el bbundle es para extraer datos
-       // username=extras.getString("username"); //cuidado que le comente esto para poner el intent al principio
-       // correo=extras.getString("correo"); //a esta tambien le comente, pero debo descomentar para trabajar normal
+        Bundle extras=getIntent().getExtras(); //el bbundle es para extraer datos
+        username=extras.getString("username"); //cuidado que le comente esto para poner el intent al principio
+        correo=extras.getString("correo"); //a esta tambien le comente, pero debo descomentar para trabajar normal
 
     }
 
@@ -107,6 +108,13 @@ public class HotelActivity extends AppCompatActivity {
         switch (id) {
             case R.id.Principal: //este tambien esta en menu.xml
                 intent =new Intent(HotelActivity.this, MainActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.parques: //este tambien esta en menu.xml
+                intent =new Intent(HotelActivity.this, ListActivity.class); //ojo a lo que antepone el this!!!
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
