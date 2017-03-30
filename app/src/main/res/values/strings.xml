@@ -6,6 +6,9 @@
     <string name="iniciar">iniciar</string>
     <string name="registers">registers</string>
     <string name="Ipiales">Ipiales</string>
+    <string name="titulo_tab_sitio1">Sitio1</string>
+    <string name="titulo_tab_sitio2">Sitio2</string>
+    <string name="titulo_tab_sitio3">Sitio3</string>
     <string name="usernamei">Nombre de Usuario</string>
     <string name="passwordd">Contraseña</string>
     <string name="registerss">Registrarse</string>
@@ -34,4 +37,11 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_drawer_bares">DrawerBares</string>
+    <string name="title_activity_drawer_sitios">DrawerSitiosActivity</string>
+    <string name="title_activity_drawer_main">DrawerMainActivity</string>
+    <string name="title_activity_drawer__perfil">Drawer_Perfil</string>
+    <string name="title_activity_drawer_perfil">DrawerPerfilActivity</string>
+    <string name="title_activity_drawer_hotel">DrawerHotelActivity</string>
+    <string name="title_activity_drawer_bar">DrawerBarActivity</string>
 </resources>

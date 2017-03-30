@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                     if (eUser.getText().toString().equals(username) && ePass.getText().toString().equals(password))
                     {
-                        intent =new Intent(LoginActivity.this, MainActivity.class); //ojo a lo que antepone el this!!!
+                        intent =new Intent(LoginActivity.this, DrawerMainActivity.class); //ojo a lo que antepone el this!!!
                         intent.putExtra("username", username);
                         intent.putExtra("correo", correo);
                         startActivity(intent);

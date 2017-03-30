@@ -5,11 +5,7 @@
         <item
             android:id="@+id/dMain"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Main" />
-        <item
-            android:id="@+id/dPerfil"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Perfil" />
+            android:title="@string/Principal" />
 
     </group>
 
@@ -33,5 +29,4 @@
                 android:title="Parques" />
         </menu>
     </item>
-
 </menu>

@@ -1,10 +1,15 @@
 package com.camilobc.ipialestravel;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -21,32 +26,17 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
-public class HotelActivity extends AppCompatActivity {
+public class HotelActivity extends AppCompatActivity  { //esta es otra forma de dar accion a un boton
 
     String username, correo;
     Intent intent;
-
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
     private SectionsPagerAdapter mSectionsPagerAdapter;
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
     private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel);
-
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
@@ -60,21 +50,23 @@ public class HotelActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FragmentManager fm = getSupportFragmentManager();
+//        FragmentTransaction ft = fm.beginTransaction();
 
-        Bundle extras=getIntent().getExtras(); //el bbundle es para extraer datos
-        username=extras.getString("username"); //cuidado que le comente esto para poner el intent al principio
-        correo=extras.getString("correo"); //a esta tambien le comente, pero debo descomentar para trabajar normal
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+
+//        Bundle extras=getIntent().getExtras(); //el bbundle es para extraer datos
+//        username=extras.getString("username"); //cuidado que le comente esto para poner el intent al principio
+//        correo=extras.getString("correo"); //a esta tambien le comente, pero debo descomentar para trabajar normal
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -149,7 +141,9 @@ public class HotelActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-//
+
+
+    //
 //    /**
 //     * A placeholder fragment containing a simple view.
 //     */

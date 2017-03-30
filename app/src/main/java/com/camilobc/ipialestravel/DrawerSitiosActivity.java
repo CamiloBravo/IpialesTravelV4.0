@@ -1,11 +1,11 @@
 package com.camilobc.ipialestravel;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
@@ -20,24 +20,36 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class DrawerActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener { //esta es otra forma de dar accion a un boton
+public class DrawerSitiosActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
+    Intent intent;
+    String username, correo;
     private SectionsPagerAdapter mSectionsPagerAdapter;
-
     private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drawer);
+        setContentView(R.layout.activity_drawer_sitios);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        Bundle extras=getIntent().getExtras(); //el bbundle es para extraer datos
+        username=extras.getString("username");
+        correo=extras.getString("correo");
+
         setSupportActionBar(toolbar);
+
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(this); //borre y puse esto
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -48,15 +60,11 @@ public class DrawerActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-
-        Hotel2 fragment =  new Hotel2();
-        ft.add(R.id.contenedorFragment, fragment).commit();
-
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -69,15 +77,13 @@ public class DrawerActivity extends AppCompatActivity
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            // return PlaceholderFragment.newInstance(position + 1);
-            switch(position){
-                case 0: hotel1Fragment tab1 = new hotel1Fragment();
+            switch (position){
+                case 0: Sitio1 tab1 = new Sitio1();
                     return tab1;
-                case 1: Hotel2 tab2 = new Hotel2();
+                case 1: Sitio2 tab2 = new Sitio2();
                     return tab2;
-                case 2: Hotel3 tab3 = new Hotel3();
+                case 2: Sitio3 tab3 = new Sitio3();
                     return tab3;
-
                 default: return null;
             }
         }
@@ -92,11 +98,11 @@ public class DrawerActivity extends AppCompatActivity
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Hola";
+                    return "Las Lajas";
                 case 1:
-                    return "SORATAMA";
+                    return "Charco";
                 case 2:
-                    return "HOTEL 3";
+                    return "Gran Plaza";
             }
             return null;
         }
@@ -115,7 +121,7 @@ public class DrawerActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.drawer, menu);
+        getMenuInflater().inflate(R.menu.drawer_sitios, menu);
         return true;
     }
 
@@ -141,33 +147,32 @@ public class DrawerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.dMain) {
-            Intent intent = new Intent(DrawerActivity.this, MainActivity.class);
+            intent = new Intent(DrawerSitiosActivity.this, DrawerMainActivity.class); //ojo a lo que antepone el this!!!
+            intent.putExtra("username", username);
+            intent.putExtra("correo", correo);
             startActivity(intent);
-            // Handle the camera action
+            finish();
         } else if (id == R.id.dPerfil) {
-            Intent intent = new Intent(DrawerActivity.this, HotelActivity.class);
+            intent = new Intent(DrawerSitiosActivity.this, DrawerPerfilActivity.class); //ojo a lo que antepone el this!!!
+            intent.putExtra("username", username);
+            intent.putExtra("correo", correo);
             startActivity(intent);
-
+            finish();
         } else if (id == R.id.dHotel) {
-            FragmentManager fm = getSupportFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-
-            Hotel3 fragment =  new Hotel3();
-            ft.replace(R.id.contenedorFragment, fragment).commit();
-//            Intent intent = new Intent(DrawerActivity.this, HotelActivity.class);
-//            startActivity(intent);
+            intent = new Intent(DrawerSitiosActivity.this, DrawerHotelActivity.class); //ojo a lo que antepone el this!!!
+            intent.putExtra("username", username);
+            intent.putExtra("correo", correo);
+            startActivity(intent);
+            finish();
 
         } else if (id == R.id.dBar) {
-            Intent intent = new Intent(DrawerActivity.this, BaresActivity.class);
+            intent = new Intent(DrawerSitiosActivity.this, DrawerBarActivity.class); //ojo a lo que antepone el this!!!
+            intent.putExtra("username", username);
+            intent.putExtra("correo", correo);
             startActivity(intent);
-
-        } else if (id == R.id.dSitios) {
-            Intent intent = new Intent(DrawerActivity.this, SitiosActivity.class);
-            startActivity(intent);
+            finish();
 
         } else if (id == R.id.dParques) {
-            Intent intent = new Intent(DrawerActivity.this, ListActivity.class);
-            startActivity(intent);
 
         }
 
@@ -175,9 +180,4 @@ public class DrawerActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-//    @Override
-//    public void onClick(View v) {
-//
-//    }
 }

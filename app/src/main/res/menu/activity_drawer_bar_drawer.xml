@@ -4,12 +4,12 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/dMain"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Main" />
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/Principal" />
         <item
             android:id="@+id/dPerfil"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Perfil" />
+            android:title="@string/miPerfil" />
 
     </group>
 
@@ -17,12 +17,8 @@
         <menu>
             <item
                 android:id="@+id/dHotel"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="Hoteles" />
-            <item
-                android:id="@+id/dBar"
                 android:icon="@drawable/ic_menu_manage"
-                android:title="Bares" />
+                android:title="Hoteles" />
             <item
                 android:id="@+id/dSitios"
                 android:icon="@drawable/ic_menu_manage"

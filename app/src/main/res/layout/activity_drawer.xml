@@ -21,5 +21,21 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_drawer"
         app:menu="@menu/activity_drawer_drawer" />
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/Ipialescap"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textColor="#9f3730"-->
+        <!--android:textSize="30sp"-->
+        <!--android:textStyle="bold" />-->
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="231dp"-->
+        <!--android:src="@drawable/carnavales"/>-->
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/orquestas"/>-->
 
 </android.support.v4.widget.DrawerLayout>
