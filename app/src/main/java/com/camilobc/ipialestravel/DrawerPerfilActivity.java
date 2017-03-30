@@ -1,6 +1,7 @@
 package com.camilobc.ipialestravel;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,11 +23,17 @@ public class DrawerPerfilActivity extends AppCompatActivity
     String username, correo;
     TextView tUsername, tCorreo;
     Intent intent;
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer_perfil);
+
+        prefs= getSharedPreferences("MisPreferencias",MODE_PRIVATE);
+        editor = prefs.edit();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -120,6 +127,8 @@ public class DrawerPerfilActivity extends AppCompatActivity
                 finish();
                 break;
             case R.id.cerrar: //cerrar es nombre de menu.xml
+                editor.putInt("login",-1); //aqui coloca el -1, para que quede sin login
+                editor.commit();
                 intent = new Intent(DrawerPerfilActivity.this, LoginActivity.class); //ojo a lo que antepone el this!!!
                 startActivity(intent);
                 finish();
