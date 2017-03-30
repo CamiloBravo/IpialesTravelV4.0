@@ -1,6 +1,7 @@
 package com.camilobc.ipialestravel;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -25,6 +26,8 @@ public class SitiosActivity extends AppCompatActivity {
 
     String username, correo;
     Intent intent;
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -45,6 +48,9 @@ public class SitiosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sitios);
+
+        prefs= getSharedPreferences("MisPreferencias",MODE_PRIVATE);
+        editor = prefs.edit();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -139,6 +145,8 @@ public class SitiosActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.cerrar: //cerrar es nombre de menu.xml
+                editor.putInt("login",-1); //aqui coloca el -1, para que quede sin login
+                editor.commit();
                 intent =new Intent(SitiosActivity.this, LoginActivity.class); //ojo a lo que antepone el this!!!
                 startActivity(intent);
                 finish();

@@ -1,6 +1,7 @@
 package com.camilobc.ipialestravel;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -25,6 +26,8 @@ public class DrawerHotelActivity extends AppCompatActivity
 
     Intent intent;
     String username, correo;
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
 
@@ -33,6 +36,9 @@ public class DrawerHotelActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer_hotel);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        prefs= getSharedPreferences("MisPreferencias",MODE_PRIVATE);
+        editor = prefs.edit();
 
         Bundle extras=getIntent().getExtras(); //el bbundle es para extraer datos
         username=extras.getString("username");
@@ -169,6 +175,8 @@ public class DrawerHotelActivity extends AppCompatActivity
                 finish();
                 break;
             case R.id.cerrar: //cerrar es nombre de menu.xml
+                editor.putInt("login",-1); //aqui coloca el -1, para que quede sin login
+                editor.commit();
                 intent = new Intent(DrawerHotelActivity.this, LoginActivity.class); //ojo a lo que antepone el this!!!
                 startActivity(intent);
                 finish();
