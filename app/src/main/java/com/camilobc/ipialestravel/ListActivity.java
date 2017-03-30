@@ -91,35 +91,35 @@ public class ListActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.Principal: //este tambien esta en menu.xml
-                intent =new Intent(ListActivity.this, MainActivity.class); //ojo a lo que antepone el this!!!
+                intent =new Intent(ListActivity.this, DrawerMainActivity.class); //ojo a lo que antepone el this!!!
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.miPerfil: //este tambien esta en menu.xml
-                intent =new Intent(ListActivity.this, PerfilActivity.class); //ojo a lo que antepone el this!!!
+                intent =new Intent(ListActivity.this, DrawerPerfilActivity.class); //ojo a lo que antepone el this!!!
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.sitios: //cerrar es nombre de menu.xml
-                intent =new Intent(ListActivity.this, SitiosActivity.class); //ojo a lo que antepone el this!!!
+                intent =new Intent(ListActivity.this, DrawerSitiosActivity.class); //ojo a lo que antepone el this!!!
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.bares: //cerrar es nombre de menu.xml
-                intent =new Intent(ListActivity.this, BaresActivity.class); //ojo a lo que antepone el this!!!
+                intent =new Intent(ListActivity.this, DrawerBarActivity.class); //ojo a lo que antepone el this!!!
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.hotel: //cerrar es nombre de menu.xml
-                intent =new Intent(ListActivity.this, HotelActivity.class); //ojo a lo que antepone el this!!!
+                intent =new Intent(ListActivity.this, DrawerHotelActivity.class); //ojo a lo que antepone el this!!!
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);

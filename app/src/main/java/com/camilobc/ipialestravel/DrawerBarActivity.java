@@ -132,9 +132,47 @@ public class DrawerBarActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.Principal: //este tambien esta en menu.xml
+                intent = new Intent(DrawerBarActivity.this, DrawerMainActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.parques: //este tambien esta en menu.xml
+                intent =new Intent(DrawerBarActivity.this, ListActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.miPerfil: //este tambien esta en menu.xml
+                intent = new Intent(DrawerBarActivity.this, DrawerPerfilActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.sitios: //cerrar es nombre de menu.xml
+                intent = new Intent(DrawerBarActivity.this, DrawerSitiosActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.hotel: //cerrar es nombre de menu.xml
+                intent = new Intent(DrawerBarActivity.this, DrawerHotelActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.cerrar: //cerrar es nombre de menu.xml
+                intent = new Intent(DrawerBarActivity.this, LoginActivity.class); //ojo a lo que antepone el this!!!
+                startActivity(intent);
+                finish();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -175,6 +213,11 @@ public class DrawerBarActivity extends AppCompatActivity
             finish();
 
         } else if (id == R.id.dParques) {
+            intent =new Intent(DrawerBarActivity.this, ListActivity.class); //ojo a lo que antepone el this!!!
+            intent.putExtra("username", username);
+            intent.putExtra("correo", correo);
+            startActivity(intent);
+            finish();
 
         }
 

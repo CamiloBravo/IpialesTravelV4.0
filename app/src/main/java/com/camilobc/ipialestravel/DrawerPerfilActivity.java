@@ -83,21 +83,6 @@ public class DrawerPerfilActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.sitios) {
-            Sitio1 fragment = new Sitio1();
-            ft.replace(android.R.id.content, fragment).commit();
-        }
-        if (id == R.id.sitios) {
-            Sitio2 fragment = new Sitio2();
-            ft.replace(android.R.id.content, fragment).commit();
-        }
-        if (id == R.id.sitios) {
-            Sitio3 fragment = new Sitio3();
-            ft.replace(android.R.id.content, fragment).commit();
-        }
         switch (id) {
             case R.id.Principal: //este tambien esta en menu.xml
                 intent = new Intent(DrawerPerfilActivity.this, DrawerMainActivity.class); //ojo a lo que antepone el this!!!
@@ -114,14 +99,21 @@ public class DrawerPerfilActivity extends AppCompatActivity
                 finish();
                 break;
             case R.id.sitios: //cerrar es nombre de menu.xml
-                intent = new Intent(DrawerPerfilActivity.this, SitiosActivity.class); //ojo a lo que antepone el this!!!
+                intent = new Intent(DrawerPerfilActivity.this, DrawerSitiosActivity.class); //ojo a lo que antepone el this!!!
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.hotel: //cerrar es nombre de menu.xml
-                intent = new Intent(DrawerPerfilActivity.this, HotelActivity.class); //ojo a lo que antepone el this!!!
+                intent = new Intent(DrawerPerfilActivity.this, DrawerHotelActivity.class); //ojo a lo que antepone el this!!!
+                intent.putExtra("username", username);
+                intent.putExtra("correo", correo);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.bares: //cerrar es nombre de menu.xml
+                intent = new Intent(DrawerPerfilActivity.this, DrawerBarActivity.class); //ojo a lo que antepone el this!!!
                 intent.putExtra("username", username);
                 intent.putExtra("correo", correo);
                 startActivity(intent);
@@ -172,6 +164,11 @@ public class DrawerPerfilActivity extends AppCompatActivity
             finish();
 
         } else if (id == R.id.dParques) {
+            intent = new Intent(DrawerPerfilActivity.this, ListActivity.class); //ojo a lo que antepone el this!!!
+            intent.putExtra("username", username);
+            intent.putExtra("correo", correo);
+            startActivity(intent);
+            finish();
 
         }
 
