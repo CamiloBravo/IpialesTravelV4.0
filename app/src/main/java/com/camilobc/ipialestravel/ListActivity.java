@@ -2,6 +2,7 @@ package com.camilobc.ipialestravel;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -22,6 +23,8 @@ import android.widget.Toast;
 public class ListActivity extends AppCompatActivity {
     Intent intent;
     String username, correo;
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
    // String[] bares = new String[]{"shots", "yesterday", "madrid"};
     private Lista_entrada[] datos=new Lista_entrada[]{
            new Lista_entrada(R.drawable.pola, "Parque La Pola", "Parque insignia del municipio", "calle 7 #12-A"),
@@ -35,6 +38,9 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
+        prefs= getSharedPreferences("MisPreferencias",MODE_PRIVATE);
+        editor = prefs.edit();
 
         Bundle extras=getIntent().getExtras();
         username=extras.getString("username");
@@ -86,6 +92,8 @@ public class ListActivity extends AppCompatActivity {
         switch (id)
         {
             case R.id.cerrar: //cerrar es nombre de menu.xml
+                editor.putInt("login",-1); //aqui coloca el -1, para que quede sin login
+                editor.commit();
                 intent =new Intent(ListActivity.this, LoginActivity.class); //ojo a lo que antepone el this!!!
                 startActivity(intent);
                 finish();

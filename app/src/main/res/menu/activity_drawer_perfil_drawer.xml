@@ -29,4 +29,12 @@
                 android:title="Parques" />
         </menu>
     </item>
+    <item android:title="Opciones de Usuario">
+        <menu>
+            <item
+                android:id="@+id/dCerrar"
+                android:icon="@drawable/visto"
+                android:title="Cerrar Sesion" />
+        </menu>
+    </item>
 </menu>

@@ -226,6 +226,14 @@ public class DrawerBarActivity extends AppCompatActivity
             intent.putExtra("correo", correo);
             startActivity(intent);
             finish();
+        } else if (id == R.id.dCerrar) {
+            editor.putInt("login",-1); //aqui coloca el -1, para que quede sin login
+            editor.commit();
+            intent =new Intent(DrawerBarActivity.this, LoginActivity.class); //ojo a lo que antepone el this!!!
+            intent.putExtra("username", username);
+            intent.putExtra("correo", correo);
+            startActivity(intent);
+            finish();
 
         }
 
