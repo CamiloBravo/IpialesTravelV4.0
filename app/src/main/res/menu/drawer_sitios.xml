@@ -14,6 +14,10 @@
         android:title="Bares"
         />
     <item
+        android:id="@+id/hotel"
+        android:title="Hoteles"
+        />
+    <item
         android:id="@+id/parques"
         android:title="Parques"
         />
