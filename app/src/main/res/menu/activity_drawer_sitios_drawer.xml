@@ -4,11 +4,11 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/dMain"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/visto"
             android:title="@string/Principal" />
         <item
             android:id="@+id/dPerfil"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/visto"
             android:title="@string/miPerfil" />
 
     </group>
@@ -17,15 +17,15 @@
         <menu>
             <item
                 android:id="@+id/dBar"
-                android:icon="@drawable/ic_menu_manage"
+                android:icon="@drawable/visto"
                 android:title="Bares" />
             <item
                 android:id="@+id/dHotel"
-                android:icon="@drawable/ic_menu_manage"
+                android:icon="@drawable/visto"
                 android:title="Hoteles" />
             <item
                 android:id="@+id/dParques"
-                android:icon="@drawable/ic_menu_manage"
+                android:icon="@drawable/visto"
                 android:title="Parques" />
         </menu>
     </item>

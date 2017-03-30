@@ -38,7 +38,9 @@
         <activity
             android:name=".SitiosActivity"
             android:label="@string/title_activity_sitios"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+
+        </activity>
         <activity android:name=".MainActivity" />
         <activity
             android:name=".DrawerActivity"

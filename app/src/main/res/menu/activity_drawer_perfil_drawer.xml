@@ -4,7 +4,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/dMain"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/visto"
             android:title="@string/Principal" />
 
     </group>
@@ -13,19 +13,19 @@
         <menu>
             <item
                 android:id="@+id/dHotel"
-                android:icon="@drawable/ic_menu_slideshow"
+                android:icon="@drawable/visto"
                 android:title="Hoteles" />
             <item
                 android:id="@+id/dBar"
-                android:icon="@drawable/ic_menu_manage"
+                android:icon="@drawable/visto"
                 android:title="Bares" />
             <item
                 android:id="@+id/dSitios"
-                android:icon="@drawable/ic_menu_manage"
+                android:icon="@drawable/visto"
                 android:title="Sitios Turisiticos" />
             <item
                 android:id="@+id/dParques"
-                android:icon="@drawable/ic_menu_manage"
+                android:icon="@drawable/visto"
                 android:title="Parques" />
         </menu>
     </item>

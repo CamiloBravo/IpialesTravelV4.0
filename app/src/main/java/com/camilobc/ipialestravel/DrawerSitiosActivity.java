@@ -19,12 +19,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class DrawerSitiosActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Intent intent;
     String username, correo;
+//    TextView tUsername, tCorreo;
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
 
@@ -34,9 +36,15 @@ public class DrawerSitiosActivity extends AppCompatActivity
         setContentView(R.layout.activity_drawer_sitios);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
+//        tUsername=(TextView) findViewById(R.id.tUsername1);
+//        tCorreo=(TextView) findViewById(R.id.tCorreo1);
+
         Bundle extras=getIntent().getExtras(); //el bbundle es para extraer datos
         username=extras.getString("username");
         correo=extras.getString("correo");
+
+//        tUsername.setText(username);
+//        tCorreo.setText(correo);
 
         setSupportActionBar(toolbar);
 
