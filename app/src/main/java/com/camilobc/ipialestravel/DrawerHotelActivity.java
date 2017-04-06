@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
@@ -90,6 +91,8 @@ public class DrawerHotelActivity extends AppCompatActivity
                     return tab2;
                 case 2: Hotel3 tab3 = new Hotel3();
                     return tab3;
+                case 3: MapsHotelFragment tab4 = new MapsHotelFragment();
+                    return tab4;
                 default: return null;
             }
         }
@@ -97,18 +100,20 @@ public class DrawerHotelActivity extends AppCompatActivity
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Mayasquer";
+                    return "Mayas";
                 case 1:
                     return "Torres";
                 case 2:
                     return "Nubes";
+                case 3:
+                    return "Ubicacion";
             }
             return null;
         }

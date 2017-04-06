@@ -99,6 +99,8 @@ public class DrawerSitiosActivity extends AppCompatActivity
                     return tab2;
                 case 2: Sitio3 tab3 = new Sitio3();
                     return tab3;
+                case 3: MapsSitiosFragment tab4 = new MapsSitiosFragment();
+                    return tab4;
                 default: return null;
             }
         }
@@ -106,7 +108,7 @@ public class DrawerSitiosActivity extends AppCompatActivity
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
 
         @Override
@@ -118,6 +120,8 @@ public class DrawerSitiosActivity extends AppCompatActivity
                     return "Charco";
                 case 2:
                     return "Gran Plaza";
+                case 3:
+                    return "Ubicacion";
             }
             return null;
         }

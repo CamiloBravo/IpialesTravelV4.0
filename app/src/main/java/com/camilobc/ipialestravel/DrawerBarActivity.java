@@ -90,6 +90,8 @@ public class DrawerBarActivity extends AppCompatActivity
                     return tab2;
                 case 2: Bar3 tab3 = new Bar3();
                     return tab3;
+                case 3: MapasBarFragment tab4 = new MapasBarFragment();
+                    return tab4;
                 default: return null;
             }
         }
@@ -97,7 +99,7 @@ public class DrawerBarActivity extends AppCompatActivity
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
 
         @Override
@@ -109,6 +111,8 @@ public class DrawerBarActivity extends AppCompatActivity
                     return "Yesterday";
                 case 2:
                     return "Madrid";
+                case 3:
+                    return "Ubicacion";
             }
             return null;
         }
